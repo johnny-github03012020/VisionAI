@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionAI - Generador de Videos con IA</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/generator.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">VisionAI</div>
+            <nav>
+                <ul class="main-nav">
+                    <li class="nav-item" data-page="inicio">Inicio</li>
+                    <li class="nav-item active" data-page="generador">Generador</li>
+                    <li class="nav-item" data-page="galeria">Galería</li>
+                </ul>
+            </nav>
+            <div class="auth-section">
+                <button id="iniciar-sesion" class="btn">Iniciar Sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="generator-container">
+            <h1>Generador de Videos</h1>
+            <p class="generator-description">Describe tu idea y personaliza las opciones para crear un video único con IA</p>
+            
+            <div class="generator-layout">
+                <div class="generator-form-container">
+                    <form id="video-generator-form">
+                        <!-- Descripción del video -->
+                        <div class="form-group">
+                            <label for="video-description">Descripción del video</label>
+                            <textarea id="video-description" name="description" rows="4" placeholder="Describe detalladamente el video que deseas crear..." required></textarea>
+                        </div>
+                        
+                        <!-- Duración del video -->
+                        <div class="form-section">
+                            <h3>Duración del video</h3>
+                            <div class="option-buttons">
+                                <div class="option-button">
+                                    <input type="radio" id="duration-short" name="duration" value="short" checked>
+                                    <label for="duration-short">
+                                        <span class="option-icon"><i class="fas fa-clock"></i></span>
+                                        <span class="option-title">Corto</span>
+                                        <span class="option-desc">15-60 segundos</span>
+                                    </label>
+                                </div>
+                                <div class="option-button">
+                                    <input type="radio" id="duration-medium" name="duration" value="medium">
+                                    <label for="duration-medium">
+                                        <span class="option-icon"><i class="fas fa-clock"></i></span>
+                                        <span class="option-title">Medio</span>
+                                        <span class="option-desc">5-10 minutos</span>
+                                    </label>
+                                </div>
+                                <div class="option-button">
+                                    <input type="radio" id="duration-long" name="duration" value="long">
+                                    <label for="duration-long">
+                                        <span class="option-icon"><i class="fas fa-clock"></i></span>
+                                        <span class="option-title">Largo</span>
+                                        <span class="option-desc">30-45 minutos</span>
+                                    </label>
+                                </div>
+                                <div class="option-button">
+                                    <input type="radio" id="duration-custom" name="duration" value="custom">
+                                    <label for="duration-custom">
+                                        <span class="option-icon"><i class="fas fa-sliders-h"></i></span>
+                                        <span class="option-title">Personalizado</span>
+                                        <span class="option-desc">Definir duración</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div id="custom-duration-container" style="display: none;">
+                                <label for="custom-duration">Duración personalizada (segundos):</label>
+                                <input type="number" id="custom-duration" name="customDuration" min="1" max="3600" value="60">
+                            </div>
+                        </div>
+                        
+                        <!-- Orientación del video -->
+                        <div class="form-section">
+                            <h3>Orientación del video</h3>
+                            <div class="option-buttons">
+                                <div class="option-button">
+                                    <input type="radio" id="orientation-horizontal" name="orientation" value="horizontal" checked>
+                                    <label for="orientation-horizontal">
+                                        <span class="option-icon"><i class="fas fa-tv"></i></span>
+                                        <span class="option-title">Horizontal</span>
+                                        <span class="option-desc">16:9</span>
+                                    </label>
+                                </div>
+                                <div class="option-button">
+                                    <input type="radio" id="orientation-vertical" name="orientation" value="vertical">
+                                    <label for="orientation-vertical">
+                                        <span class="option-icon"><i class="fas fa-mobile-alt"></i></span>
+                                        <span class="option-title">Vertical</span>
+                                        <span class="option-desc">9:16</span>
+                                    </label>
+                                </div>
+                                <div class="option-button">
+                                    <input type="radio" id="orientation-both" name="orientation" value="both">
+                                    <label for="orientation-both">
+                                        <span class="option-icon"><i class="fas fa-clone"></i></span>
+                                        <span class="option-title">Ambos</span>
+                                        <span class="option-desc">Dos formatos</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Estilo visual -->
+                        <div class="form-section">
+                            <h3>Estilo visual</h3>
+                            <select id="visual-style" name="visualStyle" class="form-select">
+                                <option value="cinematic">Cinematográfico</option>
+                                <option value="documentary">Documental</option>
+                                <option value="vlog">Vlog</option>
+                                <option value="animation">Animación</option>
+                                <option value="minimalist">Minimalista</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Música de fondo -->
+                        <div class="form-section">
+                            <h3>Música de fondo</h3>
+                            <select id="background-music" name="backgroundMusic" class="form-select">
+                                <option value="auto">Automática basada en contenido</option>
+                                <option value="upbeat">Alegre</option>
+                                <option value="dramatic">Dramática</option>
+                                <option value="relaxing">Relajante</option>
+                                <option value="none">Sin música</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Transiciones -->
+                        <div class="form-section">
+                            <h3>Transiciones</h3>
+                            <select id="transitions" name="transitions" class="form-select">
+                                <option value="auto">Automáticas basadas en contenido</option>
+                                <option value="fade">Fundidos</option>
+                                <option value="slide">Deslizamientos</option>
+                                <option value="zoom">Zoom</option>
+                                <option value="minimal">Mínimas</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Idioma -->
+                        <div class="form-section">
+                            <h3>Idioma</h3>
+                            <select id="language" name="language" class="form-select">
+                                <option value="es">Español</option>
+                                <option value="en">Inglés</option>
+                                <option value="fr">Francés</option>
+                                <option value="de">Alemán</option>
+                                <option value="it">Italiano</option>
+                                <option value="pt">Portugués</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Opciones adicionales -->
+                        <div class="form-section">
+                            <h3>Opciones adicionales</h3>
+                            <div class="checkbox-group">
+                                <div class="checkbox-option">
+                                    <input type="checkbox" id="include-subtitles" name="includeSubtitles">
+                                    <label for="include-subtitles">Incluir subtítulos</label>
+                                </div>
+                                <div class="checkbox-option">
+                                    <input type="checkbox" id="include-voiceover" name="includeVoiceover">
+                                    <label for="include-voiceover">Incluir narración por voz</label>
+                                </div>
+                                <div class="checkbox-option">
+                                    <input type="checkbox" id="include-captions" name="includeCaptions">
+                                    <label for="include-captions">Incluir textos en pantalla</label>
+                                </div>
+                                <div class="checkbox-option">
+                                    <input type="checkbox" id="include-effects" name="includeEffects">
+                                    <label for="include-effects">Incluir efectos especiales</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Botón de generación -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn primary btn-generate">Generar Video</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="preview-container">
+                    <h3>Previsualización</h3>
+                    <div class="video-preview">
+                        <div class="video-placeholder">
+                            <i class="fas fa-film"></i>
+                            <p>Tu video aparecerá aquí</p>
+                        </div>
+                        <video id="preview-player" controls style="display: none;">
+                            <source src="" type="video/mp4">
+                            Tu navegador no soporta la reproducción de videos.
+                        </video>
+                    </div>
+                    <div class="preview-actions" style="display: none;">
+                        <button class="btn action-btn delete-btn">
+                            <i class="fas fa-trash"></i> Eliminar
+                        </button>
+                        <button class="btn action-btn download-btn">
+                            <i class="fas fa-download"></i> Descargar
+                        </button>
+                        <div class="share-dropdown">
+                            <button class="btn action-btn share-btn">
+                                <i class="fas fa-share-alt"></i> Compartir
+                            </button>
+                            <div class="share-options">
+                                <button class="social-share-btn" data-platform="facebook">
+                                    <i class="fab fa-facebook"></i> Facebook
+                                </button>
+                                <button class="social-share-btn" data-platform="twitter">
+                                    <i class="fab fa-twitter"></i> Twitter
+                                </button>
+                                <button class="social-share-btn" data-platform="instagram">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </button>
+                                <button class="social-share-btn" data-platform="youtube">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </button>
+                                <button class="social-share-btn" data-platform="tiktok">
+                                    <i class="fab fa-tiktok"></i> TikTok
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="generation-status">
+                        <div class="status-indicator waiting">
+                            <p>Esperando para generar...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <div class="footer-brand">
+            <h2>VisionAI</h2>
+            <p>Creando el futuro de los contenidos digitales con inteligencia artificial.</p>
+          </div>
+          <div class="footer-social">
+            <a href="#" class="social-icon" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Discord">
+              <i class="fab fa-discord"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Explorar</h3>
+          <ul class="footer-links">
+            <li><a href="#">Videos</a></li>
+            <li><a href="#">Chat</a></li>
+            <li><a href="#">Audio</a></li>
+            <li><a href="#">Explorar</a></li>
+            <li><a href="#">Generador de Canciones</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Recursos</h3>
+          <ul class="footer-links">
+            <li><a href="#">Recursos</a></li>
+            <li><a href="#">Galería</a></li>
+            <li><a href="#">Analítica</a></li>
+            <li><a href="#">API</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Legal</h3>
+          <ul class="footer-links">
+            <li><a href="#">Términos de servicio</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Política de cookies</a></li>
+            <li><a href="#">Acerca de</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2023 VisionAI. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/generator.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

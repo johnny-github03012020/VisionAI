@@ -1,0 +1,66 @@
+<!-- Añade esto donde quieras que aparezca el modal de video -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="video-container">
+      <video id="videoPlayer" controls width="100%">
+        Tu navegador no soporta la reproducción de videos.
+      </video>
+      <div id="videoError" class="video-error" style="display: none;">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h3>Error: No se puede reproducir el video</h3>
+        <p id="errorMessage">El archivo de video no se encuentra disponible en el sitio.</p>
+        <div class="error-actions">
+          <button id="ffmpegHelpBtn" class="btn btn-primary">
+            <i class="fas fa-question-circle"></i> Instalar FFmpeg
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="video-info">
+      <p id="videoPrompt"></p>
+      <p id="videoStyle"></p>
+      <p id="videoDuration"></p>
+      <p id="videoProvider"></p>
+      <p id="videoDate"></p>
+    </div>
+    <div class="video-actions">
+      <button id="downloadBtn" class="btn btn-primary" data-video-id="">Descargar</button>
+      <button id="eliminarBtn" class="btn btn-danger" data-video-id="">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de ayuda para FFmpeg -->
+<div id="ffmpegModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Instalación de FFmpeg</h2>
+    <div class="ffmpeg-instructions">
+      <p>Para generar y reproducir videos, necesitas instalar FFmpeg en tu sistema:</p>
+      <ol>
+        <li>Descarga FFmpeg desde el siguiente enlace:</li>
+        <li>Extrae el archivo ZIP a una carpeta (por ejemplo: C:\ffmpeg)</li>
+        <li>Añade la carpeta bin (C:\ffmpeg\bin) a tu PATH del sistema:
+          <ul>
+            <li>Abre el Panel de Control → Sistema → Configuración avanzada del sistema</li>
+            <li>Haz clic en "Variables de entorno"</li>
+            <li>En "Variables del sistema", selecciona "Path" y haz clic en "Editar"</li>
+            <li>Haz clic en "Nuevo" y añade la ruta a la carpeta bin (C:\ffmpeg\bin)</li>
+            <li>Haz clic en "Aceptar" en todas las ventanas</li>
+          </ul>
+        </li>
+        <li>Reinicia la aplicación</li>
+      </ol>
+      <div class="download-section">
+        <a href="https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip" class="btn btn-primary" target="_blank">
+          <i class="fas fa-download"></i> Descargar FFmpeg para Windows
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Asegúrate de incluir los scripts -->
+<script src="/js/errorHandler.js"></script>
+<script src="/js/videoPlayer.js"></script>

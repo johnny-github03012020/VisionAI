@@ -1,0 +1,47 @@
+<section id="generator" class="section">
+    <div class="container">
+        <h2>Generador de Videos</h2>
+        
+        <div class="form-container">
+            <form id="generator-form">
+                <div class="form-group">
+                    <label for="video-description">Describe tu video:</label>
+                    <textarea id="video-description" name="description" placeholder="Describe el video que quieres generar..."></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ai-provider">Proveedor de IA:</label>
+                        <select id="ai-provider" name="provider">
+                            <option value="ollama">Ollama</option>
+                            <option value="openai">OpenAI</option>
+                            <option value="stability">Stability AI</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="visual-style">Estilo visual:</label>
+                        <select id="visual-style" name="style">
+                            <option value="cinematic">Cinematográfico</option>
+                            <option value="cartoon">Animación</option>
+                            <option value="realistic">Realista</option>
+                            <option value="artistic">Artístico</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group duration-container">
+                    <label for="duration-slider">Duración (segundos): <span id="duration-value">4</span></label>
+                    <input type="range" id="duration-slider" name="duration" min="2" max="10" value="4">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" id="generate-btn" class="btn btn-generate">Generar Video</button>
+                    <button type="button" id="clear-btn" class="btn btn-clear">Limpiar</button>
+                </div>
+            </form>
+            
+            <div id="generation-status" class="hidden"></div>
+        </div>
+    </div>
+</section>

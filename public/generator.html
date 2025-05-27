@@ -1,0 +1,38 @@
+<div class="container">
+  <h1>Generador de Videos</h1>
+  
+  <!-- Añadir el contenedor de error de FFmpeg -->
+  <div id="ffmpeg-error" class="error-message" style="display: none;">
+    <h3><i class="fas fa-exclamation-triangle"></i> FFmpeg no encontrado</h3>
+    <p>Para generar videos, necesitas instalar FFmpeg en tu sistema:</p>
+    <ol>
+      <li>Descarga FFmpeg desde <a href="https://ffmpeg.org/download.html" target="_blank">ffmpeg.org</a> o usa el botón de descarga directa abajo.</li>
+      <li>Extrae el archivo ZIP a una carpeta (por ejemplo: C:\ffmpeg)</li>
+      <li>Añade la carpeta bin (C:\ffmpeg\bin) a tu PATH del sistema:
+        <ul>
+          <li>Abre el Panel de Control → Sistema → Configuración avanzada del sistema</li>
+          <li>Haz clic en "Variables de entorno"</li>
+          <li>En "Variables del sistema", selecciona "Path" y haz clic en "Editar"</li>
+          <li>Haz clic en "Nuevo" y añade la ruta a la carpeta bin (C:\ffmpeg\bin)</li>
+          <li>Haz clic en "Aceptar" en todas las ventanas</li>
+        </ul>
+      </li>
+      <li>Reinicia tu aplicación</li>
+    </ol>
+    <a href="https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip" class="download-link" target="_blank">
+      <i class="fas fa-download"></i> Descargar FFmpeg para Windows
+    </a>
+  </div>
+  
+  <form id="videoForm">
+    <div class="form-group">
+      <button type="submit" class="btn primary">Generar Video</button>
+      <button id="ffmpeg-help-btn" class="btn secondary" type="button">
+        <i class="fas fa-question-circle"></i> Ayuda con FFmpeg
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- Asegúrate de incluir el script al final del body -->
+<script src="/js/ffmpegHelper.js"></script>

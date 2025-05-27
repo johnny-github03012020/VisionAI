@@ -1,0 +1,39 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Error: FFmpeg no encontrado</title>
+          <style>
+            body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+            .error { color: red; font-weight: bold; }
+            .instructions { margin-top: 30px; text-align: left; max-width: 600px; margin: 30px auto; }
+            .download-btn { 
+              display: inline-block; 
+              background-color: #4CAF50; 
+              color: white; 
+              padding: 10px 20px; 
+              text-decoration: none; 
+              border-radius: 5px; 
+              margin-top: 20px; 
+            }
+          </style>
+        </head>
+        <body>
+          <h1 class="error">Error: FFmpeg no encontrado</h1>
+          <p>No se pudo generar el video porque FFmpeg no está instalado o no se encuentra en las rutas esperadas.</p>
+          
+          <div class="instructions">
+            <h2>Instrucciones para instalar FFmpeg:</h2>
+            <ol>
+              <li>Descargue FFmpeg desde <a href="https://ffmpeg.org/download.html" target="_blank">https://ffmpeg.org/download.html</a></li>
+              <li>Extraiga los archivos a una carpeta, por ejemplo: C:\ffmpeg</li>
+              <li>Agregue la carpeta bin (C:\ffmpeg\bin) al PATH del sistema</li>
+              <li>Reinicie la aplicación</li>
+            </ol>
+          </div>
+          
+          <p>Una vez instalado FFmpeg, intente generar el video nuevamente.</p>
+          <a href="https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip" class="download-btn">Descargar FFmpeg para Windows</a>
+        </body>
+        </html>
+      

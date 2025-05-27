@@ -1,0 +1,127 @@
+/* Footer styles */
+.footer {
+  background-color: #121927;
+  color: #8b95a5;
+  padding: 20px 0 10px;
+  /* Cambiamos de fixed a relative para que no se superponga con el contenido */
+  position: relative;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 150px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #4a6cf7; /* Cambiado a azul para coincidir con la imagen */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-brand {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.footer-brand h2 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.footer-brand p {
+  line-height: 1.4;
+  margin-bottom: 15px;
+  max-width: 300px;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Ajustamos los iconos sociales para que sean menos prominentes */
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: #1e293b;
+  border-radius: 50%;
+  color: #8b95a5;
+  transition: all 0.3s ease;
+  font-size: 12px;
+}
+
+.social-icon:hover {
+  background-color: #4a6cf7;
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  margin-top: 15px;
+  border-top: 1px solid #1e293b;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+  }
+  
+  .footer-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

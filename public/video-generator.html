@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Videos con IA - VisionAI</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="/">
+        <img src="/img/logo.png" alt="VisionAI Logo">
+        <span>VisionAI</span>
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/video">Video</a></li>
+        <li><a href="/chat">Chat</a></li>
+        <li><a href="/audio">Audio</a></li>
+      </ul>
+    </nav>
+    <div class="user-actions">
+      <button class="btn primary">Crear Rápido</button>
+      <div class="credits">1,000</div>
+      <div class="user-menu">
+        <button class="btn outline">Iniciar sesión</button>
+        <button class="btn primary">Registrarse</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Generador de Videos con IA</h1>
+      <p class="subtitle">Crea videos profesionales a partir de texto en segundos</p>
+      
+      <div class="tags">
+        <span class="tag">Popular</span>
+        <span class="tag">Inspirador</span>
+        <span class="tag">Tutorial</span>
+        <span class="tag">Educativo</span>
+        <span class="tag">Historias</span>
+      </div>
+      
+      <div class="video-generator-container">
+        <form id="video-form" class="video-options">
+          <div class="form-group">
+            <label for="video-description">
+              <i class="fas fa-pen"></i>
+              Describe tu video
+              <span class="tooltip" data-tooltip="Describe detalladamente el video que deseas crear">
+                <i class="fas fa-info-circle"></i>
+              </span>
+            </label>
+            <textarea id="video-description" rows="5" placeholder="Describe detalladamente el video que deseas crear. Por ejemplo: 'Un documental sobre la vida marina en los arrecifes de coral, mostrando la diversidad de especies y los efectos del cambio climático...'"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label>
+              <i class="fas fa-clock"></i>
+              Duración del video
+              <span class="tooltip" data-tooltip="Selecciona la duración aproximada del video">
+                <i class="fas fa-info-circle"></i>
+              </span>
+            </label>
+            <div class="duration-options">
+              <div class="option">
+                <input type="radio" id="duration-short" name="duration" value="short" checked>
+                <label for="duration-short">
+                  <div class="option-content">
+                    <h4>Corto (15-60s)</h4>
+                    <p>Ideal para redes sociales</p>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="option">
+                <input type="radio" id="duration-medium" name="duration" value="medium">
+                <label for="duration-medium">
+                  <div class="option-content">
+                    <h4>5-10 minutos</h4>
+                    <p>Contenido explicativo breve</p>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="option">
+                <input type="radio" id="duration-long" name="duration" value="long">
+                <label for="duration-long">
+                  <div class="option-content">
+                    <h4>30-45 minutos</h4>
+                    <p>Contenido detallado y profundo</p>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="option">
+                <input type="radio" id="duration-custom" name="duration" value="custom">
+                <label for="duration-custom">
+                  <div class="option-content">
+                    <h4>Personalizado</h4>
+                    <p>Define una duración específica</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+            
+            <div class="custom-duration-container" style="display: none;">
+              <label for="custom-duration">Duración personalizada (segundos):</label>
+              <input type="number" id="custom-duration" min="10" max="3600" value="60">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>
+              <i class="fas fa-mobile-alt"></i>
+              Orientación del video
+              <span class="tooltip" data-tooltip="Selecciona la orientación del video">
+                <i class="fas fa-info-circle"></i>
+              </span>
+            </label>
+            <div class="orientation-options">
+              <div class="option">
+                <input type="radio" id="orientation-horizontal" name="orientation" value="horizontal" checked>
+                <label for="orientation-horizontal">
+                  <div class="orientation-preview horizontal">
+                    <div class="preview-content">Horizontal (16:9)</div>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="option">
+                <input type="radio" id="orientation-vertical" name="orientation" value="vertical">
+                <label for="orientation-vertical">
+                  <div class="orientation-preview vertical">
+                    <div class="preview-content">Vertical (9:16)</div>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="option">
+                <input type="radio" id="orientation-both" name="orientation" value="both">
+                <label for="orientation-both">
+                  <div class="orientation-preview both">
+                    <div class="preview-content">Ambos formatos</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="background-music">
+              <i class="fas fa-music"></i>
+              Música de fondo
+              <span class="tooltip" data-tooltip="Selecciona el tipo de música de fondo">
+                <i class="fas fa-info-circle"></i>
+              </span>
+            </label>
+            <select id="background-music">
+              <option value="automatic">Automática (basada en contenido)</option>
+              <option value="energetic">Energética</option>
+              <option value="relaxing">Relajante</option>
+              <option value="inspirational">Inspiradora</option>
+              <option value="dramatic">Dramática</option>
+              <option value="none">Sin música</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="transitions">
+              <i class="fas fa-film"></i>
+              Transiciones
+              <span class="tooltip" data-tooltip="Selecciona el tipo de transiciones entre escenas">
+                <i class="fas fa-info-circle"></i>
+              </span>
+            </label>
+            <select id="transitions">
+              <option value="automatic">Automáticas (basadas en contenido)</option>
+              <option value="fade">Fundido</option>
+              <option value="slide">Deslizamiento</option>
+              <option value="zoom">Zoom</option>
+              <option value="wipe">Barrido</option>
+              <option value="none">Sin transiciones</option>
+            </select>
+          </div>
+          
+          <div class="form-group checkboxes">
+            <div class="checkbox-option">
+              <input type="checkbox" id="include-subtitles" checked>
+              <label for="include-subtitles">Incluir subtítulos</label>
+            </div>
+            
+            <div class="checkbox-option">
+              <input type="checkbox" id="include-voice-over" checked>
+              <label for="include-voice-over">Incluir narración por voz</label>
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" id="generate-video-btn" class="btn primary">Generar Video</button>
+            <p class="generation-note">La generación puede tomar entre 30 segundos y 2 minutos dependiendo de la complejidad.</p>
+          </div>
+        </form>
+        
+        <div class="preview-section">
+          <h3>Previsualización</h3>
+          <div id="preview-container" class="preview-container">
+            <div class="preview-placeholder">
+              <p class="preview-description-placeholder">Aquí se mostrará la previsualización de tu video</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>VisionAI</h3>
+        <p>Creando el futuro de los contenidos digitales con inteligencia artificial.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Explorar</h3>
+        <ul>
+          <li><a href="/videos">Videos</a></li>
+          <li><a href="/chat">Chat</a></li>
+          <li><a href="/audio">Audio</a></li>
+          <li><a href="/generador-de-canciones">Generador de Canciones</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Recursos</h3>
+        <ul>
+          <li><a href="/recursos">Recursos</a></li>
+          <li><a href="/galeria">Galería</a></li>
+          <li><a href="/analitica">Analítica</a></li>
+          <li><a href="/api">API</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="/terminos-de-servicio">Términos de servicio</a></li>
+          <li><a href="/politica-de-privacidad">Política de privacidad</a></li>
+          <li><a href="/politica-de-cookies">Política de cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2023 VisionAI. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="/js/videoOptions.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionAI - Generador de Videos con IA</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">VisionAI</div>
+            <!-- En la sección de navegación -->
+            <nav>
+                <ul class="main-nav">
+                    <li class="nav-item active" data-page="inicio">Inicio</li>
+                    <li class="nav-item" data-page="generador">Generador</li>
+                    <li class="nav-item" data-page="galeria">Galería</li>
+                </ul>
+            </nav>
+            <div class="auth-section">
+                <button id="iniciar-sesion" class="btn">Iniciar Sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Inicio Page -->
+        <div id="inicio-page" class="page-content">
+            <div class="hero-section">
+                <div class="container">
+                    <h1>Genera videos impresionantes con IA</h1>
+                    <p>Utiliza el poder de la inteligencia artificial para crear videos únicos a partir de tus descripciones.</p>
+                    <!-- En la sección hero -->
+                    <div class="hero-actions">
+                        <button id="comenzar-ahora" class="btn btn-primary btn-lg">Comenzar ahora</button>
+                        <a href="generador.html" class="btn btn-outline btn-lg go-to-generator">Ir al Generador</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <div class="container">
+                    <div class="feature-cards">
+                        <div class="feature-card">
+                            <div class="feature-icon">🧠</div>
+                            <h3>IA Open Source</h3>
+                            <p>Utiliza modelos de IA de código abierto para generar tus videos.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎨</div>
+                            <h3>Múltiples estilos</h3>
+                            <p>Elige entre diferentes estilos visuales para personalizar tus videos.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <h3>Generación rápida</h3>
+                            <p>Obtén tus videos en cuestión de minutos, listos para compartir.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="how-it-works-section">
+                <div class="container">
+                    <h2>Cómo funciona</h2>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h3>Describe tu idea</h3>
+                            <p>Escribe una descripción detallada del video que deseas crear.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h3>Elige un estilo</h3>
+                            <p>Selecciona entre varios estilos visuales para tu video.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h3>Genera tu video</h3>
+                            <p>Nuestra IA creará tu video en cuestión de minutos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- En la sección CTA -->
+            <div class="cta-section">
+                <div class="container">
+                    <h2>¿Listo para crear tu primer video?</h2>
+                    <a href="generador.html" class="btn primary" id="ir-generador">Ir al Generador</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Generador Page (placeholder) -->
+        <div id="generador-page" class="page-content" style="display: none;">
+            <div class="container">
+                <h2>Generador de Videos</h2>
+                <!-- Contenido del generador -->
+            </div>
+        </div>
+
+        <!-- Galería Page (placeholder) -->
+        <div id="galeria-page" class="page-content" style="display: none;">
+            <div class="container">
+                <h2>Galería de Videos</h2>
+                <!-- Contenido de la galería -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer actualizado para coincidir con el diseño de la imagen -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <div class="footer-brand">
+            <h2>VisionAI</h2>
+            <p>Creando el futuro de los contenidos digitales con inteligencia artificial.</p>
+          </div>
+          <div class="footer-social">
+            <a href="#" class="social-icon" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Discord">
+              <i class="fab fa-discord"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Explorar</h3>
+          <ul class="footer-links">
+            <li><a href="#">Videos</a></li>
+            <li><a href="#">Chat</a></li>
+            <li><a href="#">Audio</a></li>
+            <li><a href="#">Explorar</a></li>
+            <li><a href="#">Generador de Canciones</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Recursos</h3>
+          <ul class="footer-links">
+            <li><a href="#">Recursos</a></li>
+            <li><a href="#">Galería</a></li>
+            <li><a href="#">Analítica</a></li>
+            <li><a href="#">API</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Legal</h3>
+          <ul class="footer-links">
+            <li><a href="#">Términos de servicio</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Política de cookies</a></li>
+            <li><a href="#">Acerca de</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2023 VisionAI. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- Modal de inicio de sesión -->
+    <div id="login-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn primary">Iniciar Sesión</button>
+            </form>
+            <p class="register-link">¿No tienes cuenta? <a href="#" id="register-link">Regístrate</a></p>
+        </div>
+    </div>
+
+    <!-- Modal de registro -->
+    <!-- Register Modal -->
+    <div id="register-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Registro</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="reg-username">Usuario:</label>
+                    <input type="text" id="reg-username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Email:</label>
+                    <input type="email" id="reg-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Contraseña:</label>
+                    <input type="password" id="reg-password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-confirm-password">Confirmar Contraseña:</label>
+                    <input type="password" id="reg-confirm-password" name="confirmPassword" required>
+                </div>
+                <button type="submit" class="btn primary">Registrarse</button>
+            </form>
+            <p class="login-link">¿Ya tienes cuenta? <a href="#" id="login-link">Inicia Sesión</a></p>
+        </div>
+    </div>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ffmpegDetector.js"></script>
+</body>
+</html>

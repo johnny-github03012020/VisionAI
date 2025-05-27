@@ -1,0 +1,47 @@
+{
+  "openai": {
+    "baseUrl": "https://api.openai.com/v1",
+    "models": {
+      "text": "gpt-4",
+      "vision": "gpt-4-vision-preview"
+    },
+    "maxTokens": 500
+  },
+  "stability": {
+    "baseUrl": "https://api.stability.ai/v1",
+    "models": {
+      "image": "stable-diffusion-xl-1024-v1-0"
+    },
+    "imageSettings": {
+      "width": 1024,
+      "height": 1024,
+      "steps": 30,
+      "cfgScale": 7
+    }
+  },
+  "video": {
+    "maxDuration": 30,
+    "minDuration": 5,
+    "defaultDuration": 10,
+    "frameRate": 30,
+    "resolution": {
+      "width": 1920,
+      "height": 1080
+    },
+    "styles": [
+      "photorealistic",
+      "cartoon",
+      "abstract",
+      "cinematic",
+      "anime",
+      "digital-art",
+      "fantasy",
+      "isometric",
+      "line-art",
+      "low-poly",
+      "modeling-compound",
+      "origami",
+      "pixel-art"
+    ]
+  }
+}

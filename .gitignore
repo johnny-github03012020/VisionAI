@@ -1,0 +1,9 @@
+bin/ffmpeg/*
+bin/ffmpeg.exe
+bin/ffplay.exe
+bin/ffprobe.exe
+downloads/*
+*.zip
+node_modules/
+.env
+*.log
