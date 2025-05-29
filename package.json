@@ -1,0 +1,29 @@
+{
+  "name": "visionai",
+  "version": "1.0.0",
+  "description": "VisionAI Multimedia Generation Platform",
+  "main": "server.js", 
+  "scripts": {
+    "start": "node server.js", 
+    "install-ffmpeg": "node scripts/install-ffmpeg.js"
+  },
+  "keywords": [
+    "ai",
+    "multimedia",
+    "video",
+    "generator"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.0.0",    
+    "bcrypt": "^5.0.0",   
+    "canvas": "^2.9.0",
+    "dotenv": "^16.0.0",  
+    "express": "^4.17.1", 
+    "extract-zip": "^2.0.0", 
+    "fluent-ffmpeg": "^2.1.2", 
+    "jsonwebtoken": "^9.0.0", 
+    "uuid": "^9.0.0"      
+  }
+}
